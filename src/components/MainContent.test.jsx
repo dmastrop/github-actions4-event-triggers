@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event';
 
 import MainContent from './MainContent';
 
+//adding a comment in master branch
+
 describe('MainContent', () => {
   it('should render a button', () => {
     render(<MainContent />);
