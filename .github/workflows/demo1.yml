@@ -15,7 +15,6 @@ on:
       - main # main
       - 'dev-*' # dev-new dev-this-is-new
       - 'feat/**' # feat/new feat/new/button
-      - 'dev'
   workflow_dispatch:
   push:
     branches:
@@ -25,6 +24,8 @@ on:
       - 'dev-*'  # dev-new dev-this-is-new; the * means anything other than slashes /
       - 'feat/**' # feat/new feat/new/button; the ** includes slashes /
       #developer-1, for example, would not trigger the build
+      - 'dev'
+    
     #paths-ignore:
     #  - '.github/workflows/*'
         #the push will only trigger the workflow if github/workflows file was NOT changed.
