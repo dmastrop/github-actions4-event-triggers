@@ -7,9 +7,30 @@ on:
     #types: [opened, edited]
     types:
       - opened
+      #-closed
       #- edited
       # which activity types trigger the pull_request
+    branches:
+    # note that this branch pull refers to the TARGET of the pull request and not the source
+      - main # main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feat/**' # feat/new feat/new/button
   workflow_dispatch:
+  push:
+    branches:
+    #reserved name "branches"
+      - main
+      - master
+      - 'dev-*'  # dev-new dev-this-is-new; the * means anything other than slashes /
+      - 'feat/**' # feat/new feat/new/button; the ** includes slashes /
+      #developer-1, for example, would not trigger the build
+    paths-ignore:
+      - '.github/workflows/*'
+        #the push will only trigger the workflow if github/workflows file was NOT changed.
+        # if other files changed and this file changed it will not trigger the workflow 
+    #paths:
+     # - '.github/workflows/*'
+      #only triggered if at least one file in paths is changed.     
 jobs:
   deploy:
     runs-on: ubuntu-latest
