@@ -1,7 +1,7 @@
 name: Events Demo 1
 #on: [push, workflow_dispatch]
 # we do not want all pushes to all branches to execute this workflow
-# we do not want to deploy unless master branch pushed.
+# we do not want to deploy unless master branch pushed..
 on:
   pull_request:
     #types: [opened, edited]
