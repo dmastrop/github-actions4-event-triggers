@@ -26,8 +26,8 @@ on:
       #developer-1, for example, would not trigger the build
       - 'dev'
     
-    #paths-ignore:
-    #  - '.github/workflows/*'
+    paths-ignore:
+      - '.github/workflows/*'
         #the push will only trigger the workflow if github/workflows file was NOT changed.
         # if other files changed and this file changed it will not trigger the workflow 
     #paths:
