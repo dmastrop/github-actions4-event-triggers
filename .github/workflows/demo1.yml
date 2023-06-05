@@ -24,7 +24,7 @@ on:
       - 'dev-*'  # dev-new dev-this-is-new; the * means anything other than slashes /
       - 'feat/**' # feat/new feat/new/button; the ** includes slashes /
       #developer-1, for example, would not trigger the build
-      - 'dev'
+      #- 'dev'
     
     paths-ignore:
       - '.github/workflows/*'
